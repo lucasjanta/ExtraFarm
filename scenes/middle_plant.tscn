@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://d01j41js7mxda"]
+
+[ext_resource type="Script" path="res://scenes/middle_plant.gd" id="1_7d3r8"]
+[ext_resource type="Texture2D" uid="uid://sewqurbx6776" path="res://assets/plant-mid.png" id="1_mf7uw"]
+[ext_resource type="Texture2D" uid="uid://ch1ku3ha1ylfs" path="res://assets/leaf1.png" id="2_7ecve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cmim"]
+size = Vector2(16, 6.625)
+
+[node name="middle-plant" type="Node2D"]
+script = ExtResource("1_7d3r8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mf7uw")
+
+[node name="leaf1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf1"]
+position = Vector2(8, -21.5)
+shape = SubResource("RectangleShape2D_0cmim")
+
+[node name="Sprite2D" type="Sprite2D" parent="leaf1"]
+position = Vector2(8, -21)
+rotation = 1.5708
+texture = ExtResource("2_7ecve")
+
+[node name="leaf2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf2"]
+position = Vector2(-9, -6.75)
+shape = SubResource("RectangleShape2D_0cmim")
+
+[node name="Sprite2D" type="Sprite2D" parent="leaf2"]
+position = Vector2(-8, -7)
+rotation = -1.5708
+texture = ExtResource("2_7ecve")
+
+[node name="leaf3" type="Area2D" parent="."]
+position = Vector2(22, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf3"]
+position = Vector2(-8, -7.375)
+shape = SubResource("RectangleShape2D_0cmim")
+
+[node name="Sprite2D" type="Sprite2D" parent="leaf3"]
+position = Vector2(-8, -7)
+rotation = 1.5708
+texture = ExtResource("2_7ecve")
+
+[node name="leaf4" type="Area2D" parent="."]
+position = Vector2(-3, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf4"]
+position = Vector2(-7, -7.6875)
+shape = SubResource("RectangleShape2D_0cmim")
+
+[node name="Sprite2D" type="Sprite2D" parent="leaf4"]
+position = Vector2(-7, -8)
+rotation = -1.5708
+texture = ExtResource("2_7ecve")

@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://hbk1tsd2cvks"]
+
+[ext_resource type="PackedScene" uid="uid://bfjgjar7v4p7h" path="res://scenes/alien.tscn" id="1_lbgvg"]
+[ext_resource type="Texture2D" uid="uid://omlg2po8nepi" path="res://assets/side-plants-Sheet.png" id="3_lrivm"]
+[ext_resource type="PackedScene" uid="uid://d0l1txukiv8oc" path="res://scenes/plant.tscn" id="3_mj1pu"]
+[ext_resource type="PackedScene" uid="uid://d01j41js7mxda" path="res://scenes/middle_plant.tscn" id="4_00wd2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mb5dr"]
+texture = ExtResource("3_lrivm")
+texture_region_size = Vector2i(32, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/animation_columns = 3
+0:1/animation_mode = 1
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/animation_columns = 3
+1:1/animation_mode = 1
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/animation_columns = 3
+0:0/animation_mode = 1
+0:0/0 = 0
+1:0/animation_columns = 3
+1:0/animation_mode = 1
+1:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kdbk5"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mb5dr")
+
+[node name="world" type="Node2D"]
+
+[node name="plant" parent="." instance=ExtResource("3_mj1pu")]
+position = Vector2(354, 496)
+scale = Vector2(4, 4)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-137, 102)
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_kdbk5")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310760, 0, 1, 1310761, 65536, 1, 1310757, 0, 1, 1310758, 65536, 1, 1310759, 131072, 1, 1310754, 0, 1, 1310755, 65536, 1, 1310756, 131072, 1, 1310751, 0, 1, 1310752, 65536, 1, 1310753, 131072, 1, 1310748, 0, 1, 1310749, 65536, 1, 1310750, 131072, 1, 1310745, 0, 1, 1310746, 65536, 1, 1310747, 131072, 1, 1310742, 0, 1, 1310743, 65536, 1, 1310744, 131072, 1, 1310739, 0, 1, 1310740, 65536, 1, 1310741, 131072, 1, 1310736, 0, 1, 1310737, 65536, 1, 1310738, 131072, 1, 1114127, 0, 1342177281, 1179663, 65536, 1342177281, 1245199, 131072, 1342177281, 917519, 0, 1342177281, 983055, 65536, 1342177281, 1048591, 131072, 1342177281, 655375, 0, 1342177281, 720911, 65536, 1342177281, 786447, 131072, 1342177281, 393231, 0, 1342177281, 458767, 65536, 1342177281, 524303, 131072, 1342177281, 196623, 0, 1342177281, 262159, 65536, 1342177281, 327695, 131072, 1342177281, -65521, 0, 1342177281, 15, 65536, 1342177281, 65551, 131072, 1342177281, -131054, 0, 805306369, -131055, 65536, 805306369, -131056, 131072, 805306369, -131051, 0, 805306369, -131052, 65536, 805306369, -131053, 131072, 805306369, -131047, 0, 805306369, -131048, 65536, 805306369, -131049, 131072, 805306369, -131043, 0, 805306369, -131044, 65536, 805306369, -131045, 131072, 805306369, -131039, 0, 805306369, -131040, 65536, 805306369, -131041, 131072, 805306369, -131035, 0, 805306369, -131036, 65536, 805306369, -131037, 131072, 805306369, -131031, 0, 805306369, -131032, 65536, 805306369, -131033, 131072, 805306369, -65494, 131072, 1610612737, 42, 65536, 1610612737, 65578, 0, 1610612737, 131114, 65536, 1610612737, 196650, 0, 1610612737, 327722, 131072, 1610612737, 393258, 65536, 1610612737, 458794, 0, 1610612737, 589866, 131072, 1610612737, 655402, 65536, 1610612737, 720938, 0, 1610612737, 852010, 131072, 1610612737, 917546, 65536, 1610612737, 983082, 0, 1610612737, 1114154, 131072, 1610612737, 1179690, 65536, 1610612737, 1245226, 0, 1610612737)
+
+[node name="middle-plant2" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(305, 332)
+scale = Vector2(-2.75, 2.75)
+
+[node name="middle-plant" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(304, 506)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant3" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(305, 157)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant4" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(466, 332)
+scale = Vector2(-2.75, 2.75)
+
+[node name="middle-plant5" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(465, 506)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant6" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(466, 157)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant7" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(631, 332)
+scale = Vector2(-2.75, 2.75)
+
+[node name="middle-plant8" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(630, 506)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant9" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(631, 157)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant10" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(796, 332)
+scale = Vector2(-2.75, 2.75)
+
+[node name="middle-plant11" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(795, 506)
+scale = Vector2(2.75, 2.75)
+
+[node name="middle-plant12" parent="." instance=ExtResource("4_00wd2")]
+position = Vector2(796, 157)
+scale = Vector2(2.75, 2.75)
+
+[node name="alien" parent="." instance=ExtResource("1_lbgvg")]
+position = Vector2(557, 110)
+scale = Vector2(3.04, 3.04)
